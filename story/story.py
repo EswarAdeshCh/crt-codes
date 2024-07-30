@@ -1,5 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
+from config import API_KEY
 
 def generate_story(hints, genre, length):
     """Generates a story based on given parameters.
@@ -14,7 +15,7 @@ def generate_story(hints, genre, length):
     """
 
     try:
-        genai.configure(api_key="AIzaSyD5KMn0G0uU_8Ayu2rb0XKvlzAz-bkEPsM")
+        genai.configure(api_key=API_KEY)
 
         generation_config = {
             "temperature": 1,
@@ -41,7 +42,7 @@ def generate_story(hints, genre, length):
         return None
 
 # Streamlit app
-st.set_page_config(page_icon="🧾",page_title="AI Story Generator")
+st.set_page_config(page_icon="🧾", page_title="AI Story Generator")
 
 hints = st.text_input("Enter hints for the story:")
 genre = st.selectbox("Select the genre of the story:", ["Fantasy", "Science Fiction", "Mystery", "Romance", "Horror", "Adventure"])
