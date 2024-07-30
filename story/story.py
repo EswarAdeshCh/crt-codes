@@ -41,7 +41,7 @@ def generate_story(hints, genre, length):
         return None
 
 # Streamlit app
-st.title("AI Story Generator")
+st.set_page_config(page_icon="🧾",page_title="AI Story Generator")
 
 hints = st.text_input("Enter hints for the story:")
 genre = st.selectbox("Select the genre of the story:", ["Fantasy", "Science Fiction", "Mystery", "Romance", "Horror", "Adventure"])
